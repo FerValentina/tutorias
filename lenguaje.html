@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Test de Lenguaje 5° Básico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      padding: 20px;
+      margin: 0;
+    }
+    .quiz-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    h3 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-left: 4px solid #4CAF50;
+    }
+    .options {
+      margin-left: 20px;
+    }
+    .options p {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .options label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .options label:hover {
+      background: #f0f0f0;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 30px;
+      background: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    }
+    .correct {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .incorrect {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    .feedback {
+      margin-top: 10px;
+      text-align: left;
+      font-size: 16px;
+    }
+    .feedback ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .feedback li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="quiz-container">
+  <h2>Test de Lenguaje 5° Básico</h2>
+  <form id="quizForm">
+    <!-- Comprensión lectora -->
+    <div class="question">
+      <h3>Texto 1: La leyenda del copihue</h3>
+      <p><em>Autor anónimo</em></p>
+      <p>Cuenta la leyenda que en tiempos antiguos, los pueblos indígenas de Chile creían que el copihue era una flor sagrada que unía la tierra con el cielo. Representaba el amor y la unión de dos jóvenes de distintas tribus, que lucharon por estar juntos a pesar de las diferencias. Al morir, los dioses transformaron su amor en una enredadera que florecía en el bosque: el copihue.</p>
+      <div class="options">
+        <p>1. ¿Qué tipo de texto es?</p>
+        <label><input type="radio" name="q1" value="correct"> Este texto es literario, porque narra una leyenda.</label>
+        <label><input type="radio" name="q1" value="wrong"> Este texto es no literario, porque informa de un hecho real.</label>
+      </div>
+      <div class="options">
+        <p>2. ¿Cuál es el tema principal?</p>
+        <label><input type="radio" name="q2" value="wrong"> El cuidado de las plantas.</label>
+        <label><input type="radio" name="q2" value="correct"> El amor representado en una flor sagrada.</label>
+        <label><input type="radio" name="q2" value="wrong"> Las diferencias entre tribus indígenas.</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Texto 2: Poema</h3>
+      <p><em>Autor: Gabriela Mistral</em></p>
+      <p>“Piececitos de niño, / azulosos de frío, / ¡cómo os ven y no os cubren, / Dios mío!”</p>
+      <div class="options">
+        <p>3. ¿Qué expresa este poema?</p>
+        <label><input type="radio" name="q3" value="correct"> Tristeza y compasión por los niños pobres.</label>
+        <label><input type="radio" name="q3" value="wrong"> Alegría por la niñez y sus juegos.</label>
+        <label><input type="radio" name="q3" value="wrong"> Orgullo por la infancia chilena.</label>
+      </div>
+      <div class="options">
+        <p>4. Este texto es:</p>
+        <label><input type="radio" name="q4" value="correct"> Literario, porque utiliza versos y lenguaje poético.</label>
+        <label><input type="radio" name="q4" value="wrong"> No literario, porque informa hechos reales.</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Texto 3: Artículo informativo</h3>
+      <p><em>Autor: Revista Escolar</em></p>
+      <p>El copihue es la flor nacional de Chile. Crece en los bosques húmedos del sur y se caracteriza por sus flores rojas en forma de campana. Es un símbolo de identidad cultural y patrimonio natural del país.</p>
+      <div class="options">
+        <p>5. Este texto es:</p>
+        <label><input type="radio" name="q5" value="wrong"> Literario.</label>
+        <label><input type="radio" name="q5" value="correct"> No literario.</label>
+      </div>
+      <div class="options">
+        <p>6. La intención principal del autor es:</p>
+        <label><input type="radio" name="q6" value="correct"> Informar sobre el copihue.</label>
+        <label><input type="radio" name="q6" value="wrong"> Relatar una leyenda.</label>
+        <label><input type="radio" name="q6" value="wrong"> Emocionar con un poema.</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>7.</b> <i>"El sol comenzó a ocultarse tras las montañas, pintando el cielo de colores naranjas y violetas." (Autor: Ana Pérez)</i> ¿Cuál es la idea principal del texto?</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="wrong"> Habla de un amanecer</label>
+        <label><input type="radio" name="q7" value="correct"> Describe un atardecer</label>
+        <label><input type="radio" name="q7" value="wrong"> Explica un día de playa</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>8.</b> ¿Qué emoción transmite el texto?</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="correct"> Alegría y calma</label>
+        <label><input type="radio" name="q8" value="wrong"> Tristeza y soledad</label>
+        <label><input type="radio" name="q8" value="wrong"> Miedo y tensión</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>9.</b> Lee este texto: <i>"Había una vez un zorro astuto que engañaba a todos en el bosque."</i> ¿Qué tipo de texto es?</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="wrong"> Poema</label>
+        <label><input type="radio" name="q9" value="correct"> Leyenda</label>
+        <label><input type="radio" name="q9" value="wrong"> Noticia</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>10.</b> Texto: <i>"La Tierra tarda 365 días en dar una vuelta alrededor del Sol."</i> Este texto es:</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="wrong"> Literario</label>
+        <label><input type="radio" name="q10" value="correct"> No literario</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>11.</b> ¿Qué parte del texto presenta los personajes y el inicio de la historia?</p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="correct"> Introducción</label>
+        <label><input type="radio" name="q11" value="wrong"> Desarrollo</label>
+        <label><input type="radio" name="q11" value="wrong"> Conclusión</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>12.</b> La parte donde se resuelve el problema del relato es:</p>
+      <div class="options">
+        <label><input type="radio" name="q12" value="wrong"> Desarrollo</label>
+        <label><input type="radio" name="q12" value="wrong"> Introducción</label>
+        <label><input type="radio" name="q12" value="correct"> Desenlace</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Ortografía: Clasificación SEGA (Aguda, Grave, Esdrújula, Sobresdrújula)</h3>
+      <p><b>13.</b> Clasifica la palabra: <strong>rápido</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q13" value="wrong"> Aguda</label>
+        <label><input type="radio" name="q13" value="wrong"> Grave</label>
+        <label><input type="radio" name="q13" value="correct"> Esdrújula</label>
+        <label><input type="radio" name="q13" value="wrong"> Sobresdrújula</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Hiato y Diptongo</h3>
+      <p><b>14.</b> Clasifica la palabra: <strong>canción</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q14" value="correct"> Diptongo</label>
+        <label><input type="radio" name="q14" value="wrong"> Hiato</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>15.</b> Clasifica la palabra: <strong>cantar</strong></p>
+      <div class="options">
+        <label><input type="radio" name="q15" value="correct"> Grave</label>
+        <label><input type="radio" name="q15" value="wrong"> Aguda</label>
+        <label><input type="radio" name="q15" value="wrong"> Esdrújula</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>16.</b> ¿La palabra <strong>país</strong> contiene hiato o diptongo?</p>
+      <div class="options">
+        <label><input type="radio" name="q16" value="correct"> Hiato</label>
+        <label><input type="radio" name="q16" value="wrong"> Diptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>17.</b> ¿La palabra <strong>tierra</strong> contiene?</p>
+      <div class="options">
+        <label><input type="radio" name="q17" value="wrong"> Hiato</label>
+        <label><input type="radio" name="q17" value="correct"> Diptongo</label>
+        <label><input type="radio" name="q17" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>18.</b> ¿Cómo se clasifica la palabra <strong>rápidamente</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q18" value="correct"> Sobresdrújula</label>
+        <label><input type="radio" name="q18" value="wrong"> Esdrújula</label>
+        <label><input type="radio" name="q18" value="wrong"> Grave</label>
+        <label><input type="radio" name="q18" value="wrong"> Aguda</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>19.</b> ¿Cómo se clasifica la palabra <strong>murciélago</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q19" value="wrong"> Sobresdrújula</label>
+        <label><input type="radio" name="q19" value="correct"> Esdrújula</label>
+        <label><input type="radio" name="q19" value="wrong"> Grave</label>
+        <label><input type="radio" name="q19" value="wrong"> Aguda</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>20.</b> ¿Cómo se clasifica la palabra <strong>fácil</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q20" value="wrong"> Sobresdrújula</label>
+        <label><input type="radio" name="q20" value="wrong"> Esdrújula</label>
+        <label><input type="radio" name="q20" value="correct"> Grave</label>
+        <label><input type="radio" name="q20" value="wrong"> Aguda</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>21.</b> ¿Cómo se clasifica la palabra <strong>compréndemelo</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q21" value="correct"> Sobresdrújula</label>
+        <label><input type="radio" name="q21" value="wrong"> Esdrújula</label>
+        <label><input type="radio" name="q21" value="wrong"> Grave</label>
+        <label><input type="radio" name="q21" value="wrong"> Aguda</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>22.</b> ¿Cómo se clasifica la palabra <strong>camión</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q22" value="wrong"> Sobresdrújula</label>
+        <label><input type="radio" name="q22" value="wrong"> Esdrújula</label>
+        <label><input type="radio" name="q22" value="wrong"> Grave</label>
+        <label><input type="radio" name="q22" value="correct"> Aguda</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>23.</b> ¿Cómo se clasifica la palabra <strong>matemáticas</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q23" value="wrong"> Sobresdrújula</label>
+        <label><input type="radio" name="q23" value="correct"> Esdrújula</label>
+        <label><input type="radio" name="q23" value="wrong"> Grave</label>
+        <label><input type="radio" name="q23" value="wrong"> Aguda</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>24.</b> ¿Cómo se clasifica la palabra <strong>lámpara</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q24" value="wrong"> Sobresdrújula</label>
+        <label><input type="radio" name="q24" value="correct"> Esdrújula</label>
+        <label><input type="radio" name="q24" value="wrong"> Grave</label>
+        <label><input type="radio" name="q24" value="wrong"> Aguda</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>25.</b> ¿Qué clasificación tiene la palabra <strong>poeta</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q25" value="correct"> Hiato</label>
+        <label><input type="radio" name="q25" value="wrong"> Diptongo</label>
+        <label><input type="radio" name="q25" value="wrong"> Ninguna</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>26.</b> En la palabra <strong>cielo</strong>, ¿qué ocurre con las vocales?</p>
+      <div class="options">
+        <label><input type="radio" name="q26" value="wrong"> Hiato</label>
+        <label><input type="radio" name="q26" value="correct"> Diptongo</label>
+        <label><input type="radio" name="q26" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>27.</b> ¿La palabra <strong>río</strong> presenta?</p>
+      <div class="options">
+        <label><input type="radio" name="q27" value="correct"> Hiato</label>
+        <label><input type="radio" name="q27" value="wrong"> Diptongo</label>
+        <label><input type="radio" name="q27" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>28.</b> ¿La palabra <strong>tierra</strong> contiene?</p>
+      <div class="options">
+        <label><input type="radio" name="q28" value="wrong"> Hiato</label>
+        <label><input type="radio" name="q28" value="correct"> Diptongo</label>
+        <label><input type="radio" name="q28" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>29.</b> ¿Qué ocurre en la palabra <strong>país</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q29" value="correct"> Hiato</label>
+        <label><input type="radio" name="q29" value="wrong"> Diptongo</label>
+        <label><input type="radio" name="q29" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>30.</b> En la palabra <strong>cuidado</strong>, ¿las vocales forman?</p>
+      <div class="options">
+        <label><input type="radio" name="q30" value="wrong"> Hiato</label>
+        <label><input type="radio" name="q30" value="correct"> Diptongo</label>
+        <label><input type="radio" name="q30" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>31.</b> La palabra <strong>sonrío</strong> tiene:</p>
+      <div class="options">
+        <label><input type="radio" name="q31" value="correct"> Hiato</label>
+        <label><input type="radio" name="q31" value="wrong"> Diptongo</label>
+        <label><input type="radio" name="q31" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>32.</b> ¿Qué clasificación corresponde a la palabra <strong>ciudad</strong>?</p>
+      <div class="options">
+        <label><input type="radio" name="q32" value="wrong"> Hiato</label>
+        <label><input type="radio" name="q32" value="correct"> Diptongo</label>
+        <label><input type="radio" name="q32" value="wrong"> Triptongo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Clasifica: Motivo u Objeto Lírico</h3>
+      <p><b>33.</b> "Lloro tu ausencia cada noche bajo las estrellas que me recuerdan tu mirada."</p>
+      <div class="options">
+        <label><input type="radio" name="q33" value="correct"> Motivo lírico: tristeza por la ausencia</label>
+        <label><input type="radio" name="q33" value="wrong"> Objeto lírico: la persona amada</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>34.</b> "La primavera despierta mis ansias de vivir y de soñar."</p>
+      <div class="options">
+        <label><input type="radio" name="q34" value="correct"> Motivo lírico: la alegría de la primavera</label>
+        <label><input type="radio" name="q34" value="wrong"> Objeto lírico: el corazón</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>35.</b> "Oh patria querida, tus montañas me llenan de orgullo."</p>
+      <div class="options">
+        <label><input type="radio" name="q35" value="wrong"> Motivo lírico: el orgullo</label>
+        <label><input type="radio" name="q35" value="correct"> Objeto lírico: la patria</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>36.</b> "El amor me enciende el alma con fuerza inagotable."</p>
+      <div class="options">
+        <label><input type="radio" name="q36" value="correct"> Motivo lírico: el amor</label>
+        <label><input type="radio" name="q36" value="wrong"> Objeto lírico: la amada</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>37.</b> "A ti, madre, elevo mis versos llenos de gratitud."</p>
+      <div class="options">
+        <label><input type="radio" name="q37" value="wrong"> Motivo lírico: la gratitud</label>
+        <label><input type="radio" name="q37" value="correct"> Objeto lírico: la madre</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>38.</b> "El dolor me envuelve como un manto oscuro."</p>
+      <div class="options">
+        <label><input type="radio" name="q38" value="correct"> Motivo lírico: el dolor</label>
+        <label><input type="radio" name="q38" value="wrong"> Objeto lírico: el cuerpo</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Enviar Respuestas</button>
+  </form>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+function checkAnswers() {
+  const correctAnswers = {
+    q1: "correct",
+    q2: "correct",
+    q3: "correct",
+    q4: "correct",
+    q5: "correct",
+    q6: "correct",
+    q7: "correct",
+    q8: "correct",
+    q9: "correct",
+    q10: "correct",
+    q11: "correct",
+    q12: "correct",
+    q13: "correct",
+    q14: "correct",
+    q15: "correct",
+    q16: "correct",
+    q17: "correct",
+    q18: "correct",
+    q19: "correct",
+    q20: "correct",
+    q21: "correct",
+    q22: "correct",
+    q23: "correct",
+    q24: "correct",
+    q25: "correct",
+    q26: "correct",
+    q27: "correct",
+    q28: "correct",
+    q29: "correct",
+    q30: "correct",
+    q31: "correct",
+    q32: "correct",
+    q33: "correct",
+    q34: "correct",
+    q35: "correct",
+    q36: "correct",
+    q37: "correct",
+    q38: "correct"
+  };
+
+  const correctAnswerText = {
+    q1: "Este texto es literario, porque narra una leyenda.",
+    q2: "El amor representado en una flor sagrada.",
+    q3: "Tristeza y compasión por los niños pobres.",
+    q4: "Literario, porque utiliza versos y lenguaje poético.",
+    q5: "No literario.",
+    q6: "Informar sobre el copihue.",
+    q7: "Describe un atardecer",
+    q8: "Alegría y calma",
+    q9: "Leyenda",
+    q10: "No literario",
+    q11: "Introducción",
+    q12: "Desenlace",
+    q13: "Esdrújula",
+    q14: "Diptongo",
+    q15: "Grave",
+    q16: "Hiato",
+    q17: "Diptongo",
+    q18: "Sobresdrújula",
+    q19: "Esdrújula",
+    q20: "Grave",
+    q21: "Sobresdrújula",
+    q22: "Aguda",
+    q23: "Esdrújula",
+    q24: "Esdrújula",
+    q25: "Hiato",
+    q26: "Diptongo",
+    q27: "Hiato",
+    q28: "Diptongo",
+    q29: "Hiato",
+    q30: "Diptongo",
+    q31: "Hiato",
+    q32: "Diptongo",
+    q33: "Motivo lírico: tristeza por la ausencia",
+    q34: "Motivo lírico: la alegría de la primavera",
+    q35: "Objeto lírico: la patria",
+    q36: "Motivo lírico: el amor",
+    q37: "Objeto lírico: la madre",
+    q38: "Motivo lírico: el dolor"
+  };
+
+  let score = 0;
+  const total = Object.keys(correctAnswers).length;
+  let incorrectQuestions = [];
+
+  for (let q in correctAnswers) {
+    const answer = document.querySelector(`input[name="${q}"]:checked`);
+    if (answer) {
+      if (answer.value === correctAnswers[q]) {
+        score++;
+      } else {
+        const questionText = document.querySelector(`input[name="${q}"][value="correct"]`).parentElement.textContent;
+        incorrectQuestions.push({
+          number: q.replace('q', ''),
+          correctAnswer: correctAnswerText[q]
+        });
+      }
+    } else {
+      incorrectQuestions.push({
+        number: q.replace('q', ''),
+        correctAnswer: correctAnswerText[q]
+      });
+    }
+  }
+
+  let resultHTML = `<p>Obtuviste ${score} de ${total} respuestas correctas (${((score/total)*100).toFixed(2)}%).</p>`;
+  if (incorrectQuestions.length > 0) {
+    resultHTML += `<div class="feedback"><p>Preguntas incorrectas o no respondidas:</p><ul>`;
+    incorrectQuestions.forEach(q => {
+      resultHTML += `<li>Pregunta ${q.number}: <span class="incorrect">Respuesta correcta: ${q.correctAnswer}</span></li>`;
+    });
+    resultHTML += `</ul></div>`;
+  } else {
+    resultHTML += `<div class="feedback"><p>¡Felicidades! Todas las respuestas son correctas.</p></div>`;
+  }
+
+  document.getElementById("result").innerHTML = resultHTML;
+}
+</script>
+</body>
+</html>
