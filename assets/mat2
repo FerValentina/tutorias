@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Unidades de Medida </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options label {
+      display: block;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h2>Quiz: Unidades de Medida de Longitud</h2>
+  <form id="quizForm">
+
+    <!-- Ejemplo de Pregunta -->
+    <div class="question">
+      <p><strong>1.</strong> ¿Cuántos metros tiene 1 kilómetro?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="wrong"> 100</label>
+        <label><input type="radio" name="q1" value="wrong"> 10</label>
+        <label><input type="radio" name="q1" value="correct"> 1000</label>
+        <label><input type="radio" name="q1" value="wrong"> 10000</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>2.</strong> Un centímetro es igual a:</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="correct"> 1/100 del metro</label>
+        <label><input type="radio" name="q2" value="wrong"> 1/10 del metro</label>
+        <label><input type="radio" name="q2" value="wrong"> 10 metros</label>
+        <label><input type="radio" name="q2" value="wrong"> 100 metros</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>3.</strong> ¿Qué unidad es mayor?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="correct"> 1 hectómetro</label>
+        <label><input type="radio" name="q3" value="wrong"> 500 metros</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>4.</strong> ¿Cuántos milímetros hay en 1 metro?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="wrong"> 100</label>
+        <label><input type="radio" name="q4" value="wrong"> 10</label>
+        <label><input type="radio" name="q4" value="wrong"> 10000</label>
+        <label><input type="radio" name="q4" value="correct"> 1000</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>5.</strong> El decímetro (dm) es:</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="correct"> 1/10 del metro</label>
+        <label><input type="radio" name="q5" value="wrong"> 1/100 del metro</label>
+        <label><input type="radio" name="q5" value="wrong"> 10 metros</label>
+        <label><input type="radio" name="q5" value="wrong"> 100 metros</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>6.</strong> ¿Cuál es menor?</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="wrong"> 1 metro</label>
+        <label><input type="radio" name="q6" value="correct"> 1 centímetro</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>7.</strong> Un milímetro (mm) corresponde a:</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="correct"> 1/1000 del metro</label>
+        <label><input type="radio" name="q7" value="wrong"> 1/100 del metro</label>
+        <label><input type="radio" name="q7" value="wrong"> 1/10 del metro</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>8.</strong> ¿Cuál es mayor?</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="wrong"> 1 decámetro</label>
+        <label><input type="radio" name="q8" value="correct"> 1 hectómetro</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>9.</strong> 1 decámetro (dam) es igual a:</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="wrong"> 1 metro</label>
+        <label><input type="radio" name="q9" value="wrong"> 100 metros</label>
+        <label><input type="radio" name="q9" value="correct"> 10 metros</label>
+        <label><input type="radio" name="q9" value="wrong"> 1000 metros</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>10.</strong> ¿Cuántos centímetros hay en 1 metro?</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="wrong"> 10</label>
+        <label><input type="radio" name="q10" value="correct"> 100</label>
+        <label><input type="radio" name="q10" value="wrong"> 1000</label>
+      </div>
+    </div>
+
+    <!-- Puedes repetir y adaptar hasta 20 preguntas -->
+
+    <button type="button" onclick="checkAnswers()">Enviar Respuestas</button>
+  </form>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+function checkAnswers() {
+  const correctAnswers = {
+    q1: "correct",
+    q2: "correct",
+    q3: "correct",
+    q4: "correct",
+    q5: "correct",
+    q6: "correct",
+    q7: "correct",
+    q8: "correct",
+    q9: "correct",
+    q10: "correct"
+    // Agregar hasta q20 cuando completes 20 preguntas
+  };
+
+  let score = 0;
+  let wrongQuestions = [];
+
+  for (let q in correctAnswers) {
+    const answer = document.querySelector(`input[name="${q}"]:checked`);
+    if (answer && answer.value === correctAnswers[q]) {
+      score++;
+    } else {
+      wrongQuestions.push(q.replace("q",""));
+    }
+  }
+
+  let resultText = `Respuestas correctas: ${score} de ${Object.keys(correctAnswers).length}.`;
+  if (wrongQuestions.length > 0) {
+    resultText += ` Preguntas incorrectas: ${wrongQuestions.join(", ")}`;
+  }
+
+  document.getElementById("result").innerHTML = resultText;
+}
+</script>
+
+</body>
+</html>
